@@ -1,0 +1,5 @@
+[package]
+
+name = "traitor"
+version = "0.0.1"
+authors = ["Gabe Durazo <gabe@gabedurazo.com>"]
