@@ -1,7 +1,21 @@
-// Coinbase: 
-// api key: c9c13c1c80f271819931ef2938ddfab8
-// api secret: NHAQ8T93Rbl7oXZIZ8CYdIWd8VARYVO6O0D87D+uoxxXEFSv52ErANLZMnmuO0tKOQHJhAvJmJkgu3BgJ0dVjA==
+#![feature(io)]
+
+extern crate crypto;
+extern crate hyper;
+extern crate "rustc-serialize" as rustc_serialize;
+extern crate time;
+extern crate websocket;
+
+mod circle;
+mod coinbase;
 
 fn main() {
-    println!("Hello, world!");
+    println!("{:?}", coinbase::get_time());
+    println!("{:?}", coinbase::get_book());
+    println!("{:?}", coinbase::get_accounts());
+
+    println!("{:?}", circle::get_info());
+
+    println!("websocketing....");
+    coinbase::get_and_listen_websocket();
 }
